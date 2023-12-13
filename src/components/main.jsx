@@ -1,5 +1,6 @@
 //Main page how you search
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
 const Main = () => {
   const [selectedOption1, setSelectedOption1] = useState('');
@@ -46,6 +47,12 @@ const Main = () => {
 
       {/* Display selected option 2 */}
       {selectedOption2 && <p>Selected Option 2: {selectedOption2}</p>}
+
+      <div className="links">
+        <Link to="/login">Sign In</Link>
+        
+
+      </div>
     </div>
   );
 };
