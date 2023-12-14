@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import main from "./components/main";
+import Main from "./components/Main";
 import { useState } from "react";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className= "Links" >
   <Router>
   <Routes>
-  <Route path="/main" element= {<main />} />
+  <Route path="/Main" element= {<Main />} />
   </Routes>
   </Router>
             </div>
