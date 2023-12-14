@@ -4,10 +4,13 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Main from "./components/Main";
 import Login from './components/Login';
+=======
+
+
 
 function App() {
-
   return (
+
     <div className= "Links" >
   <Router>
   <Routes>
@@ -16,8 +19,8 @@ function App() {
   </Routes>
   </Router>
             </div>
+
   );
 }
-
 
 export default App;
