@@ -1,0 +1,138 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('airportbackground.jpg'); /* Specify the correct path to your image */
+    background-size: cover; /* Cover the entire viewport with the background image */
+    background-position: center; /* Center the background image */
+    height: 100vh; /* Ensure the body takes up the full viewport height */
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .navbar {
+    background-color: #20232a; /* Dark background color */
+    background-image: url('/src/nlflag.png'); /* Specify the correct path to your image */
+    background-size: contain; /* Adjust the size as needed */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    background-position: right center; /* Position the image on the right */
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  
+  .navbar a {
+    color: #61dafb;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #ffffff;
+  }
+  
+  .main-content {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  /* Center and style Main and Login components */
+  .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+  
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-box, .box {
+    background-color: rgba(255, 255, 255, 0.8); /* Use rgba for a semi-transparent white background */
+    border: 3px solid #dddddd; /* Light gray border */
+    padding: 20px;
+    max-width: 500px; /* Adjust the width as needed */
+    text-align: center;
+    box-shadow: 0px 0px 10px 0px #dddddd; /* Light gray box shadow */
+    border-radius: 10px; /* Add border-radius for rounded edges */
+    margin: auto; /* Center the box */
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .cool-button {
+    background-color: #0074cc; /* Blue button color */
+    color: #ffffff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+    border-radius: 5px; /* Add border-radius for rounded button edges */
+  }
+  
+  .cool-button:hover {
+    background-color: #00548f; /* Darker blue on hover */
+  }
+  
+  .error-message {
+    color: #ff0000; /* Red error message color */
+  }
+  
+  .box {
+    background-color: rgba(255, 255, 255, 0.8); /* Use rgba for a semi-transparent white background */
+    border: 3px solid #dddddd; /* Light gray border */
+    padding: 20px;
+    width: 500px; /* Adjust the width as needed */
+    text-align: center;
+    box-shadow: 0px 0px 10px 0px #dddddd; /* Light gray box shadow */
+    border-radius: 10px; /* Add border-radius for rounded edges */
+    margin: auto; /* Center the box */
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Updated navbar styles */
+  .navbar-logo {
+    color: transparent; /* Hide the text */
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    background-image: none !important; /* Hide the background image */
+    display: flex;
+    align-items: center; /* Align items vertically within the navbar-logo */
+  }
+  
+  .logo-image {
+    margin-right: 10px;  /* Add some margin to separate the image from text */
+  }
+  
+  
+  
+  .navbar-links {
+    display: flex;
+  }
