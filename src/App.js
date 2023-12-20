@@ -1,22 +1,58 @@
-
+import PropTypes from "prop-types";
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+
 import Main from "./components/Main";
 import Login from "./components/Login";
 import Credits from "./components/Credits";
+import Results from './components/Results';
 import './styles.css';
-import axios from 'axios';
+
 
 
 function App() {
-  const [data, setData] = useState([]);
+  const [airport, setAirport] = useState([]);
+  const [aircraft, setAircraft] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+ 
+  
+  
   useEffect(() => {
-    // Fetch data from the server when the component mounts
-    fetch('/airports')
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.error('Error fetching data:', error));
+    const fetchAirport = async () => {
+      try {
+        const response = await fetch(`http://localhost:8080/airport`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch Airport");
+        }
+        const data = await response.json();
+        console.log(data);
+        setAirport(data._embedded?.airport || []);
+      } catch (error) {
+        console.error("Error fetching airport data:", error.message);
+      }
+    };
+
+    fetchAirport();
   }, []);
+ 
+  // useEffect(() => {
+  //   // Fetch airports data from the server when the component mounts
+  //   fetch('http://localhost:8080/airport')
+  //     .then(response => response.json())
+  //     .then(data => setAirport(data))
+  //     .catch(error => console.error('Error fetching airports data:', error));
+  // }, []);
+ 
+  // useEffect(() => {
+  //   // Fetch airports data from the server when the component mounts
+  //   fetch('http://localhost:8080/aircraft')
+  //     .then(response => response.json())
+  //     .then(data => setAircraft(data))
+  //     .catch(error => console.error('Error fetching aircrafts data:', error));
+  // }, []);
+ 
+
+
 
   return (
     <div>
