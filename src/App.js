@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Main from "./components/Main";
 import Login from "./components/Login";
 import Credits from "./components/Credits";
-import Results from './components/Results';
+import Admin from "./components/Admin";
 import './styles.css';
 
 
@@ -13,6 +13,9 @@ import './styles.css';
 function App() {
   const [airport, setAirport] = useState([]);
   const [aircraft, setAircraft] = useState([]);
+  const [airline, setAirline] = useState([]);
+  const [gates, setGates] = useState([]);
+
   const [searchTerm, setSearchTerm] = useState('');
  
   
@@ -20,7 +23,7 @@ function App() {
   useEffect(() => {
     const fetchAirport = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/airport`);
+        const response = await fetch(`http://airportdbdocker-env.eba-r6rauie6.us-east-1.elasticbeanstalk.com/airport`);
         if (!response.ok) {
           throw new Error("Failed to fetch Airport");
         }
@@ -34,22 +37,62 @@ function App() {
 
     fetchAirport();
   }, []);
- 
+  
   // useEffect(() => {
-  //   // Fetch airports data from the server when the component mounts
-  //   fetch('http://localhost:8080/airport')
-  //     .then(response => response.json())
-  //     .then(data => setAirport(data))
-  //     .catch(error => console.error('Error fetching airports data:', error));
+  //   const fetchAircraft = async () => {
+  //     try {
+  //       const response = await fetch(`http://localhost:8080/aircraft`);
+  //       if (!response.ok) {
+  //         throw new Error("Failed to fetch Aircraft");
+  //       }
+  //       const data = await response.json();
+  //       console.log(data);
+  //       setAircraft(data._embedded?.aircraft || []);
+  //     } catch (error) {
+  //       console.error("Error fetching aircraft data:", error.message);
+  //     }
+  //   };
+
+  //   fetchAircraft();
+  // }, []);
+  
+  // useEffect(() => {
+  //   const fetchAirline = async () => {
+  //     try {
+  //       const response = await fetch(`http://localhost:8080/airline`);
+  //       if (!response.ok) {
+  //         throw new Error("Failed to fetch Airline");
+  //       }
+  //       const data = await response.json();
+  //       console.log(data);
+  //       setAirline(data._embedded?.airline || []);
+  //     } catch (error) {
+  //       console.error("Error fetching airline data:", error.message);
+  //     }
+  //   };
+
+  //   fetchAirline();
+  // }, []);
+
+  // useEffect(() => {
+  //   const fetchGates = async () => {
+  //     try {
+  //       const response = await fetch(`http://localhost:8080/gates`);
+  //       if (!response.ok) {
+  //         throw new Error("Failed to fetch Gates");
+  //       }
+  //       const data = await response.json();
+  //       console.log(data);
+  //       setGates(data._embedded?.gates || []);
+  //     } catch (error) {
+  //       console.error("Error fetching Gates data:", error.message);
+  //     }
+  //   };
+
+  //   fetchGates();
   // }, []);
  
-  // useEffect(() => {
-  //   // Fetch airports data from the server when the component mounts
-  //   fetch('http://localhost:8080/aircraft')
-  //     .then(response => response.json())
-  //     .then(data => setAircraft(data))
-  //     .catch(error => console.error('Error fetching aircrafts data:', error));
-  // }, []);
+  
  
 
 
@@ -69,9 +112,9 @@ function App() {
               <Link to="/Credits" className="navbar-link">
                 Credits
               </Link>
-              <Link to="/Results" className="navbar-link">
-                Results
-                </Link>           
+              <Link to="/Admin" className="navbar-link">
+                Admin
+                </Link>
                  </div>
             <div className="navbar-logo">
               <img src="/src/nlflag.png" alt="Newfoundland Flag" className="logo-image" />
@@ -83,7 +126,8 @@ function App() {
           <Route path="/Main" element={<Main />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Credits" element={<Credits />} />
-          <Route path="/Results" element={<Results />} />
+          <Route path="/Admin" element={<Admin />} />
+          
         </Routes>
       </Router>
     </div>
