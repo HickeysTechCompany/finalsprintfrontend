@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Main from "./components/Main";
 import Login from "./components/Login";
 import Credits from "./components/Credits";
+import Admin from "./components/Admin";
 import './styles.css';
  
  
@@ -90,21 +91,6 @@ function App() {
     fetchGates();
   }, []);
  
-  // useEffect(() => {
-  //   // Fetch airports data from the server when the component mounts
-  //   fetch('http://localhost:8080/airport')
-  //     .then(response => response.json())
-  //     .then(data => setAirport(data))
-  //     .catch(error => console.error('Error fetching airports data:', error));
-  // }, []);
- 
-  // useEffect(() => {
-  //   // Fetch airports data from the server when the component mounts
-  //   fetch('http://localhost:8080/aircraft')
-  //     .then(response => response.json())
-  //     .then(data => setAircraft(data))
-  //     .catch(error => console.error('Error fetching aircrafts data:', error));
-  // }, []);
  
  
  
@@ -124,6 +110,9 @@ function App() {
               <Link to="/Credits" className="navbar-link">
                 Credits
               </Link>
+              <Link to="/Admin" className="navbar-linke">
+                Admin
+              </Link>
              
                  </div>
             <div className="navbar-logo">
@@ -136,6 +125,7 @@ function App() {
           <Route path="/Main" element={<Main />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Credits" element={<Credits />} />
+          <Route path="/Admin" element={<Admin />} />
          
         </Routes>
       </Router>

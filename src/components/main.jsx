@@ -82,24 +82,6 @@ const Main = () => {
     fetchGates();
   }, []);
  
-  // useEffect(() => {
-  //   const fetchAirportDetails = async () => {
-  //     if (airport) {
-  //       try {
-  //         const response = await fetch(`http://localhost:8080/airport/${airport}`);
-  //         if (!response.ok) {
-  //           throw new Error('Failed to fetch Airport details');
-  //         }
-  //         const data = await response.json();
-  //         setAirportDetails(data); // Assuming that the API response includes a property 'code'
-  //       } catch (error) {
-  //         console.error('Error fetching airport details:', error.message);
-  //       }
-  //     }
-  //   };
- 
-  //   fetchAirportDetails();
-  // }, [airport]);
  
   return (
     <div className="form-container">
