@@ -2,7 +2,12 @@
  
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
  
+=======
+import '../styles.css'; // Import the styles
+
+>>>>>>> master
 const Main = () => {
   const [airport, setAirport] = useState('');
   const [airportOptions, setAirportOptions] = useState([]);
@@ -88,6 +93,7 @@ const Main = () => {
       <div className="form-box">
         <h2>List of Airports</h2>
         <div className="form-group">
+<<<<<<< HEAD
           <label htmlFor="airport">Select an Airport:</label>
           <select
             id="airport"
@@ -143,6 +149,39 @@ const Main = () => {
             ))}
           </select>
         </div>
+=======
+          <label htmlFor="selectOption1">Select an Option:</label>
+          <select
+            id="selectOption1"
+            value={selectedOption1}
+            onChange={(e) => setSelectedOption1(e.target.value)}
+          >
+            <option value="">Select...</option>
+            {options.map((option, index) => (
+              <option key={index} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
+        {selectedOption1 && <p>Selected Option 1: {selectedOption1}</p>}
+        <div className="form-group">
+          <label htmlFor="selectOption2">Select an Option:</label>
+          <select
+            id="selectOption2"
+            value={selectedOption2}
+            onChange={(e) => setSelectedOption2(e.target.value)}
+          >
+            <option value="">Select...</option>
+            {options.map((option, index) => (
+              <option key={index} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
+        {selectedOption2 && <p>Selected Option 2: {selectedOption2}</p>}
+>>>>>>> master
         <div className="links">
           <Link to="/login">Sign In</Link>
         </div>
@@ -150,5 +189,9 @@ const Main = () => {
     </div>
   );
 };
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> master
 export default Main;

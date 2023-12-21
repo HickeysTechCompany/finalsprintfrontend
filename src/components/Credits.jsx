@@ -16,4 +16,9 @@ const Credits = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Credits;
+=======
+export default Credits;
+
+>>>>>>> master

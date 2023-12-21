@@ -1,15 +1,24 @@
+<<<<<<< HEAD
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from 'react';
+=======
+import React from 'react';
+>>>>>>> master
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
  
 import Main from "./components/Main";
 import Login from "./components/Login";
 import Credits from "./components/Credits";
+<<<<<<< HEAD
 import Admin from "./components/Admin";
 import './styles.css';
  
  
  
+=======
+import './styles.css';
+
+>>>>>>> master
 function App() {
   const [airport, setAirport] = useState([]);
   const [aircraft, setAircraft] = useState([]);
@@ -110,6 +119,7 @@ function App() {
               <Link to="/Credits" className="navbar-link">
                 Credits
               </Link>
+<<<<<<< HEAD
               <Link to="/Admin" className="navbar-linke">
                 Admin
               </Link>
@@ -121,12 +131,24 @@ function App() {
           </div>
         </div>
  
+=======
+            </div>
+            <div className="navbar-logo">
+              <img src="/src/nlflag.png" alt="Newfoundland Flag" className="logo-image" />
+            </div>
+          </div>
+        </div>
+
+>>>>>>> master
         <Routes>
           <Route path="/Main" element={<Main />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Credits" element={<Credits />} />
+<<<<<<< HEAD
           <Route path="/Admin" element={<Admin />} />
          
+=======
+>>>>>>> master
         </Routes>
       </Router>
     </div>
